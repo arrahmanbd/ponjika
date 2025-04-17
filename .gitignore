@@ -1,0 +1,14 @@
+# Dart tool directory
+.dart_tool/
+
+# Build outputs
+build/
+
+# Dependency directories
+.packages
+pubspec.lock
+
+# IDE files
+.idea/
+.vscode/
+*.iml

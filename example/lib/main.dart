@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:ponjika/ponjika.dart';
@@ -67,7 +66,7 @@ class PonjikaExampleApp extends StatelessWidget {
                     252,
                     247,
                     208,
-                  ).withOpacity(0.95), // Retro yellow with slight opacity
+                  ).withValues(alpha:0.95), // Retro yellow with slight opacity
                   border: Border.all(color: const Color(0xFFB30000), width: 6),
                   borderRadius: BorderRadius.circular(0),
                 ),
