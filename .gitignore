@@ -1,14 +1,12 @@
-# Dart tool directory
+# Dart & Flutter
 .dart_tool/
-
-# Build outputs
-build/
-
-# Dependency directories
 .packages
-pubspec.lock
-
-# IDE files
+.pub-cache/
+build/
 .idea/
-.vscode/
 *.iml
+*.lock
+*.log
+
+# VS Code
+.vscode/
