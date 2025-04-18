@@ -4,7 +4,7 @@ version: 1.0.0
 license: Apache-2.0
 homepage: https://github.com/arrahmanbd/ponjika
 repository: https://github.com/arrahmanbd/ponjika
-issue_tracker: https://github.com/arrahmanbd/flutter_addons/issues
+issue_tracker: https://github.com/arrahmanbd/ponjika/issues
 screenshots:
   - description: 'Flutter Bangla Ponjika'
     path: images/icon.jpg
