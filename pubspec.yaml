@@ -1,6 +1,6 @@
 name: ponjika
 description: "A lightweight and accurate Dart utility for converting Gregorian (English) dates into the traditional Bangla calendar"
-version: 1.0.0
+version: 1.1.0
 license: Apache-2.0
 homepage: https://github.com/arrahmanbd/ponjika
 repository: https://github.com/arrahmanbd/ponjika
