@@ -4,23 +4,55 @@
 class Ponjika {
   // The names of the months in the Bangla calendar.
   static const List<String> _banglaMonths = [
-    'বৈশাখ', 'জ্যৈষ্ঠ', 'আষাঢ়', 'শ্রাবণ', 'ভাদ্র', 'আশ্বিন',
-    'কার্তিক', 'অগ্রহায়ণ', 'পৌষ', 'মাঘ', 'ফাল্গুন', 'চৈত্র',
+    'বৈশাখ',
+    'জ্যৈষ্ঠ',
+    'আষাঢ়',
+    'শ্রাবণ',
+    'ভাদ্র',
+    'আশ্বিন',
+    'কার্তিক',
+    'অগ্রহায়ণ',
+    'পৌষ',
+    'মাঘ',
+    'ফাল্গুন',
+    'চৈত্র',
   ];
 
   // The names of the weekdays in Bangla.
   static const List<String> _weekDays = [
-    'রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার',
+    'রবিবার',
+    'সোমবার',
+    'মঙ্গলবার',
+    'বুধবার',
+    'বৃহস্পতিবার',
+    'শুক্রবার',
+    'শনিবার',
   ];
 
   // The names of the seasons in the Bangla calendar.
   static const List<String> _banglaSeasons = [
-    'গ্রীষ্ম', 'বর্ষা', 'শরৎ', 'হেমন্ত', 'শীত', 'বসন্ত',
+    'গ্রীষ্ম',
+    'বর্ষা',
+    'শরৎ',
+    'হেমন্ত',
+    'শীত',
+    'বসন্ত',
   ];
 
   // The default number of days in each month (non-leap year).
   static const List<int> _defaultMonthDays = [
-    31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30,
+    31,
+    31,
+    31,
+    31,
+    31,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30,
   ];
 
   /// Formats the provided [date] into the Bangla calendar format.
@@ -45,7 +77,8 @@ class Ponjika {
     String format = "DD MM, YY",
   }) {
     final DateTime now =
-        date?.subtract(const Duration(hours: 6)) ?? DateTime.now().subtract(const Duration(hours: 6));
+        date?.subtract(const Duration(hours: 6)) ??
+        DateTime.now().subtract(const Duration(hours: 6));
     int gregDay = now.weekday % 7;
 
     List<int> monthDays = List.from(_defaultMonthDays);
@@ -53,7 +86,10 @@ class Ponjika {
       monthDays[10] = 31; // Adjust for leap year in Falgun
     }
 
-    int adjustedYear = (now.month < 4 || (now.month == 4 && now.day < 14)) ? now.year - 1 : now.year;
+    int adjustedYear =
+        (now.month < 4 || (now.month == 4 && now.day < 14))
+            ? now.year - 1
+            : now.year;
     DateTime epoch = DateTime(adjustedYear, 4, 13);
     int banglaYear = adjustedYear - 593;
     int daysPassed = now.difference(epoch).inDays;
@@ -97,8 +133,16 @@ class Ponjika {
   /// Converts digits in a string to their corresponding Bangla digits.
   static String _convertDigitsToBangla(String input) {
     const Map<String, String> digitMap = {
-      '0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪', '5': '৫',
-      '6': '৬', '7': '৭', '8': '৮', '9': '৯',
+      '0': '০',
+      '1': '১',
+      '2': '২',
+      '3': '৩',
+      '4': '৪',
+      '5': '৫',
+      '6': '৬',
+      '7': '৭',
+      '8': '৮',
+      '9': '৯',
     };
     return input.replaceAllMapped(RegExp(r'\d'), (match) {
       return digitMap[match.group(0)!]!;
@@ -126,13 +170,20 @@ class Ponjika {
   /// Maps Bangla season names to their corresponding emojis.
   static String _getSeasonEmoji(String season) {
     switch (season) {
-      case 'গ্রীষ্ম': return '☀️';   // Summer
-      case 'বর্ষা': return '🌧️';   // Monsoon
-      case 'শরৎ': return '🍃';     // Autumn
-      case 'হেমন্ত': return '🍂';   // Fall
-      case 'শীত': return '❄️';     // Winter
-      case 'বসন্ত': return '🌸';   // Spring
-      default: return '';         
+      case 'গ্রীষ্ম':
+        return '☀️'; // Summer
+      case 'বর্ষা':
+        return '🌧️'; // Monsoon
+      case 'শরৎ':
+        return '🍃'; // Autumn
+      case 'হেমন্ত':
+        return '🍂'; // Fall
+      case 'শীত':
+        return '❄️'; // Winter
+      case 'বসন্ত':
+        return '🌸'; // Spring
+      default:
+        return '';
     }
   }
 }
